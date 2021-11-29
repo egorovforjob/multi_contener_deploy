@@ -22,15 +22,3 @@ after_success:
   - docker push egorovforjob/test-server
   - docker push egorovforjob/test-worker
 
-#deploy:
-#        provider: elasticbeanstalk
-#        region: "eu-central-1"
-#        app: "multi-docker"
-#        env: "Multi-docker-env-1"
-#        bucket_name: "elasticbeanstalk-eu-central-1-8083197754567"
-#        bucket_path: "multi-docker"
-#        on:
-#                branch: master
-#        access_key_id: $AWS_ACCESS_KEY
-#        secret_access_key: $AWS_SECRET_KEY
-
