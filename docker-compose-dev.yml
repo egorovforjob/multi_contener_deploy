@@ -12,6 +12,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./server
+    image: registry.local:5000/api
     volumes:
       - /app/node_modules
       - ./server:/app
@@ -28,6 +29,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./client
+    image: registry.local:5000/client
     volumes:
       - /app/node_modules
       - ./client:/app
@@ -35,6 +37,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
+    image: registry.local:5000/worker
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -49,5 +52,6 @@ services:
     build: 
       dockerfile: Dockerfile.dev
       context: ./nginx
+    image: registry.local:5000/nginx
     ports:
       - '10096:80'
